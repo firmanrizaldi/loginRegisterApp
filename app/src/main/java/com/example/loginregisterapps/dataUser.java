@@ -1,6 +1,9 @@
 package com.example.loginregisterapps;
 
-public class dataUser {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class dataUser implements Parcelable {
     public String nama;
     public String npm;
     public String kelas;
@@ -17,6 +20,27 @@ public class dataUser {
         this.kelas = kelas;
         this.jurusan = jurusan;
     }
+
+    public static final Creator<dataUser> CREATOR = new Creator<dataUser>() {
+        @Override
+        public dataUser createFromParcel(Parcel in) {
+            return new dataUser(in);
+        }
+
+        @Override
+        public dataUser[] newArray(int size) {
+            return new dataUser[size];
+        }
+    };
+
+    protected dataUser(Parcel in) {
+        nama = in.readString();
+        npm = in.readString();
+        kelas = in.readString();
+        jurusan = in.readString();
+        key = in.readString();
+    }
+
     public String getKey(){ return  key;}
     public void setKey(String key) { this.key = key ;}
     public String getNama() {
@@ -44,4 +68,17 @@ public class dataUser {
         this.jurusan = jurusan;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(nama);
+        parcel.writeString(npm);
+        parcel.writeString(kelas);
+        parcel.writeString(jurusan);
+        parcel.writeString(key);
+    }
 }
