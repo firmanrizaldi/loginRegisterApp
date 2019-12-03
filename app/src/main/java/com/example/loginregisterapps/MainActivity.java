@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getBundleExtra("emailpass");
         String email = bundle.getString("email");
         auth = FirebaseAuth.getInstance();
+
         TextView tvUser = findViewById(R.id.tv_user);
         tvUser.setText(email);
         btn_lihat_data = findViewById(R.id.bukaList);
@@ -47,12 +48,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setBtn_simpan();
+
             }
         });
         btn_lihat_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent explicit = new Intent(MainActivity.this, LihatDataActivity.class);
+                Intent explicit = new Intent(MainActivity.this, MyListData.class);
                 startActivity(explicit);
             }
         });
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         kelas = kelasET.getText().toString();
         jurusan = jurusanET.getText().toString();
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        mDatabase = FirebaseDatabase.getInstance().getReference("users").child("Mahasiswa");
         String userId = mDatabase.push().getKey();
         dataUser user = new dataUser(nama, npm, kelas, jurusan);
         mDatabase.child(userId).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {

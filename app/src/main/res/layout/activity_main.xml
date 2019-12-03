@@ -49,7 +49,7 @@
         android:layout_below="@+id/namaET"
         android:ems="10"
         android:hint="Npm"
-        android:inputType="text" />
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/kelasET"
