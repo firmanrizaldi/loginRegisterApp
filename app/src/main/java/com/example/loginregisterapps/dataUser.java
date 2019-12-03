@@ -37,7 +37,7 @@ public class dataUser implements Parcelable {
         nama = in.readString();
         npm = in.readString();
         kelas = in.readString();
-        jurusan = in.readString();
+         jurusan = in.readString();
         key = in.readString();
     }
 
