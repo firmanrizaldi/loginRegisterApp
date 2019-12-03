@@ -11,7 +11,7 @@
           <item index="2" class="java.lang.String" itemvalue="javax.annotation.CheckForNull" />
           <item index="3" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.Nullable" />
           <item index="4" class="java.lang.String" itemvalue="android.support.annotation.Nullable" />
-          <item index="5" class="java.lang.String" itemvalue="androidx.annotation.Nullable" />
+          <item index="5" class="java.lang.String" itemvalue="androidx.annotation.Nullable"/>
           <item index="6" class="java.lang.String" itemvalue="android.annotation.Nullable" />
           <item index="7" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNullable" />
           <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.Nullable" />
