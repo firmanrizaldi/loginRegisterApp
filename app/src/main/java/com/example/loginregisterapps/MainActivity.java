@@ -5,8 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,9 +25,12 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
-    EditText npmET, namaET, kelasET, jurusanET;
+    EditText npmET, namaET, kelasET;
+    String[] Operator = { "MIF","TIK","KAT","MBIS","RMIK"} ;
+    Spinner jurusanET ;
     Button btn_simpan, btn_lihat_data;
     String npm, nama, kelas, jurusan;
+    String Operator1 ;
     ProgressDialog dialog;
     private Context mContext;
     @Override
@@ -35,6 +41,23 @@ public class MainActivity extends AppCompatActivity {
         npmET = findViewById(R.id.npmET);
         kelasET = findViewById(R.id.kelasET);
         jurusanET = findViewById(R.id.jurusanET);
+
+        final ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, Operator) ;
+        jurusanET.setAdapter(adapter);
+        jurusanET.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Operator1=adapter.getItem(position) ;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
         Bundle bundle = getIntent().getBundleExtra("emailpass");
         String email = bundle.getString("email");
         auth = FirebaseAuth.getInstance();
@@ -74,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         nama = namaET.getText().toString();
         npm = npmET.getText().toString();
         kelas = kelasET.getText().toString();
-        jurusan = jurusanET.getText().toString();
+        jurusan = jurusanET.getSelectedItem().toString();
 
         mDatabase = FirebaseDatabase.getInstance().getReference("users").child("Mahasiswa");
         String userId = mDatabase.push().getKey();
@@ -87,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 namaET.setText("");
                 npmET.setText("");
                 kelasET.setText("");
-                jurusanET.setText("");
+
 
 
             }

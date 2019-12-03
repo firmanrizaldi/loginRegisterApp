@@ -13,78 +13,95 @@
     <TextView
 
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:text="Selamat anda berhasil Login"
-        android:textSize="24sp"
         android:textColor="@color/colorPrimary"
-        android:textStyle="bold"/>
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/tv_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
+        
         android:text="disini keluar email"
         android:textSize="10sp"
         android:textStyle="bold"/>
 
-    <EditText
-        android:id="@+id/namaET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="145dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Nama  " />
+    <LinearLayout
+        android:layout_width="244dp"
+        android:layout_height="373dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
 
-    <EditText
-        android:id="@+id/npmET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/namaET"
-        android:layout_below="@+id/namaET"
-        android:ems="10"
-        android:hint="Npm"
-        android:inputType="numberDecimal" />
+        android:padding="20dp">
 
-    <EditText
-        android:id="@+id/kelasET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/npmET"
-        android:layout_below="@+id/npmET"
-        android:ems="10"
-        android:hint="Kelas"
-        android:inputType="text" />
+        <EditText
+            android:id="@+id/namaET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:ems="10"
+            android:hint="Nama  "
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/jurusanET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/kelasET"
-        android:layout_below="@+id/kelasET"
-        android:ems="10"
-        android:hint="Jurusan"
-        android:inputType="text" />
+        <EditText
+            android:id="@+id/npmET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/namaET"
+            android:layout_alignStart="@+id/namaET"
+            android:ems="10"
+            android:hint="Npm"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/kelasET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/npmET"
+            android:layout_alignStart="@+id/npmET"
+            android:ems="10"
+            android:hint="Kelas"
+            android:inputType="text" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jurusan" />
+
+        <Spinner
+            android:id="@+id/jurusanET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kelasET"
+            android:layout_alignStart="@+id/kelasET"
+            android:ems="10" />
+
+    </LinearLayout>
+
     <Button
-        android:id="@+id/btn_simpan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/jurusanET"
-        android:layout_below="@+id/jurusanET"
-        android:layout_marginEnd="0dp"
-        android:text="Simpan" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lihat Data"
-        android:id="@+id/bukaList"
-        android:layout_centerHorizontal="true"
-        />
+            android:id="@+id/btn_simpan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/jurusanET"
+            android:layout_below="@+id/jurusanET"
+            android:layout_marginEnd="0dp"
+            android:text="Simpan" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lihat Data"
+            android:id="@+id/bukaList"
+            android:layout_centerHorizontal="true"
+            />
+
 
 
 
