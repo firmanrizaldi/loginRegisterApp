@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,7 +15,7 @@
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
-        android:text="Selamat anda berhasil Login"
+        android:text="@string/selamat_anda_berhasil_login"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -26,83 +25,80 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        
-        android:text="disini keluar email"
-        android:textSize="10sp"
-        android:textStyle="bold"/>
+        android:text="@string/disini_keluar_email"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_width="244dp"
-        android:layout_height="373dp"
-        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:orientation="vertical"
-
-        android:padding="20dp">
+        android:padding="8dp">
 
         <EditText
             android:id="@+id/namaET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerInParent="true"
             android:ems="10"
-            android:hint="Nama  "
+            android:hint="@string/nama"
             android:inputType="text" />
 
         <EditText
             android:id="@+id/npmET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/namaET"
-            android:layout_alignStart="@+id/namaET"
             android:ems="10"
-            android:hint="Npm"
+            android:hint="@string/npm"
             android:inputType="numberDecimal" />
 
         <EditText
             android:id="@+id/kelasET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/npmET"
-            android:layout_alignStart="@+id/npmET"
             android:ems="10"
-            android:hint="Kelas"
+            android:hint="@string/kelas"
             android:inputType="text" />
 
-
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jurusan" />
+            android:orientation="horizontal">
 
-        <Spinner
-            android:id="@+id/jurusanET"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/kelasET"
-            android:layout_alignStart="@+id/kelasET"
-            android:ems="10" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jurusan"
+                />
+
+            <Spinner
+                android:id="@+id/jurusanET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+
+        </LinearLayout>
 
     </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/btn_simpan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:text="@string/simpan" />
 
     <Button
-            android:id="@+id/btn_simpan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/jurusanET"
-            android:layout_below="@+id/jurusanET"
-            android:layout_marginEnd="0dp"
-            android:text="Simpan" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lihat Data"
-            android:id="@+id/bukaList"
-            android:layout_centerHorizontal="true"
-            />
+        android:id="@+id/bukaList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lihat_data" />
 
 
-
+</LinearLayout>
 
 </LinearLayout>

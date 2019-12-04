@@ -4,5 +4,13 @@
     <string name="password">Password</string>
     <string name="title_register">Register</string>
     <string name="login">Login</string>
+    <string name="disini_keluar_email">disini keluar email</string>
+    <string name="nama">Nama</string>
+    <string name="npm">Npm</string>
+    <string name="kelas">Kelas</string>
+    <string name="jurusan">Jurusan</string>
+    <string name="simpan">Simpan</string>
+    <string name="lihat_data">Lihat Data</string>
+    <string name="selamat_anda_berhasil_login">Selamat anda berhasil Login</string>
 
 </resources>
